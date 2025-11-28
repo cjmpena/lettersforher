@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Letter For You</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+        }
+
+        .envelope-closed {
+            background: #ffffff;
+            padding: 80px 60px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .envelope-closed.hidden {
+            display: none;
+        }
+
+        .envelope-closed h2 {
+            font-size: 1.5em;
+            font-weight: normal;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .open-button {
+            padding: 15px 40px;
+            background: #333;
+            color: white;
+            border: none;
+            font-size: 1em;
+            font-family: 'Georgia', serif;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .open-button:hover {
+            background: #555;
+        }
+
+        .letter-container {
+            background: #ffffff;
+            padding: 60px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0e0e0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .letter-container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .letter-container.hidden {
+            display: none;
+        }
+
+        .letter-header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .letter-header h1 {
+            font-size: 1.8em;
+            font-weight: normal;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .letter-date {
+            color: #999;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .letter-body {
+            color: #444;
+            font-size: 1.05em;
+        }
+
+        .letter-body p {
+            margin-bottom: 24px;
+        }
+
+        .signature {
+            margin-top: 50px;
+            text-align: right;
+            color: #666;
+            font-style: italic;
+        }
+
+        @media (max-width: 600px) {
+            .envelope-closed {
+                padding: 60px 40px;
+            }
+
+            .letter-container {
+                padding: 40px 30px;
+            }
+            
+            .letter-header h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="envelope-closed" id="envelopeClosed">
+            <h2>You have a message</h2>
+            <button class="open-button" onclick="openLetter()">Click here to read</button>
+        </div>
+
+        <div class="letter-container hidden" id="letterContainer">
+            <div class="letter-header">
+                <h1>To Joanna</h1>
+                <p class="letter-date" id="currentDate"></p>
+            </div>
+            
+            <div class="letter-body">
+                <p>Hi Baby</p>
+                
+                <p>Since I made you an actual letter I thought about making one my style too.</p>
+                
+                <p>I created this little space just for you, to remind you how incredibly special you are to me. I'm so grateful to have you in my life.</p>
+
+                <p>This is a live site, so I will update whenever I want you to hear some things I have to say to you, please bookmark or favourite it.</p>
+                
+                <p>Once again Jo, thank you for letting me in, for trusting me, for being so fucking patient, and for being you.</p>
+            </div>
+            
+            <div class="signature">
+                With all my love,<br>
+                CJ
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Set current date
+        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        document.getElementById('currentDate').textContent = 
+            new Date().toLocaleDateString('en-US', dateOptions);
+
+        // Open letter function
+        function openLetter() {
+            const envelopeClosed = document.getElementById('envelopeClosed');
+            const letterContainer = document.getElementById('letterContainer');
+            
+            envelopeClosed.classList.add('hidden');
+            letterContainer.classList.remove('hidden');
+            
+            setTimeout(() => {
+                letterContainer.classList.add('show');
+            }, 50);
+        }
+    </script>
+</body>
+</html>
