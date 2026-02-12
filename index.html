@@ -116,6 +116,28 @@
             font-style: italic;
         }
 
+        .letter-tab {
+            position: relative;
+            margin: -60px -60px 40px -60px;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            background: #c2c2c2;
+        }
+
+        .letter-tab a {
+            text-decoration: none;
+            color: #555;
+            font-size: 0.95em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .letter-tab a:hover {
+            color: #000;
+        }
+
         @media (max-width: 600px) {
             .envelope-closed {
                 padding: 60px 40px;
@@ -139,36 +161,40 @@
         </div>
 
         <div class="letter-container hidden" id="letterContainer">
+            <div class="letter-tab">
+                <a href="daily_dose.html">CJ's Daily Dose of Love for Jo</a>
+            </div>
             <div class="letter-header">
                 <h1>To Joanna</h1>
                 <p class="letter-date" id="currentDate"></p>
             </div>
-            
             <div class="letter-body">
-                <p>Hi Baby</p>
-                
-                <p>Since I made you an actual letter I thought about making one my style too.</p>
-                
-                <p>I created this little space just for you, to remind you how incredibly special you are to me. I'm so grateful to have you in my life.</p>
+                <p>Happy Valentine's day Jo,</p>
 
-                <p>This is a live site, so I will update whenever I want you to hear some things I have to say to you, please bookmark or favourite it.</p>
+                <p>I'm so happy I get to spend this special weekend with you and selfishly have you all to myself.</p>
                 
-                <p>Once again Jo, thank you for letting me in, for trusting me, for being so fucking patient, and for being you.</p>
+                <p>These past five months have been some of the happiest months of my life, and it’s all because I get to love someone as incredible as you every single day. You make my days lighter, my laughs louder, and my heart feels so fucking full.</p>
+
+                <p>You are my favourite person. Please dont forget that I love you more than anything in my life.</p>
+
+                <p>I know you said you wanted a letter so here's a nerdy little version for you.</p>
+                
+                <p>I hope you like the little QR code slip! I created this little website for you 2 months ago, I will continue to code it and make it fancy and special for you. I'm sure you see the little tab at the top called "CJ's Daily Dose of Love for Jo" click it and it will take you to a seperate page where theres a special message. The messages switch and change daily so its a little surprise each day. If I am somehow a little occupied with work or if I take too long to message you back, know you always have this little thing I made for you.</p>
+                
+                <p>Here’s to many, many more Valentine’s dates, more memories, more laughs, and a whole lot more love.</p>
             </div>
             
             <div class="signature">
-                With all my love,<br>
+                Forever Yours,<br>
                 CJ
             </div>
         </div>
     </div>
     <script>
-        // Set current date 
         const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
         document.getElementById('currentDate').textContent = 
             new Date().toLocaleDateString('en-US', dateOptions);
 
-        // Open letter function
         function openLetter() {
             const envelopeClosed = document.getElementById('envelopeClosed');
             const letterContainer = document.getElementById('letterContainer');

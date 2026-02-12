@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Dose of Love</title>
+
+  <!-- If your index page uses a font, use the SAME one here -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #0f0f14; /* change to your index bg color */
+      color: #ffffff;      /* change to your index text color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      max-width: 700px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-weight: 600;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    #daily-message {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.8s ease;
+    }
+
+    #daily-message.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Today's Message for Jo 💕</h1>
+  <div id="daily-message"></div>
+</div>
+
+<script>
+const messages = [
+  "You’re the best part of my day. Always.",
+  "I still get excited every time I see Jo pop up on my phone notification.",
+  "5 months with you isn’t enough. I want forever.",
+  "You make everything feel lighter and warmer.",
+  "I hope today you feel as loved as you make me feel.",
+  "I’d choose you in every lifetime.",
+  "You are my safe place.",
+  "I’m so proud of you and I will always be here to support you",
+  "Loving you is my favorite thing.",
+  "You’re stuck with me!",
+  "I adore you and the way you carry yourself.",
+  "I will take you to the most beautiful tulip fields around the world.",
+  "There hasn't been a day where I dont want to feel you or your touch.",
+  "Your voice is my favourite sound. :)"
+];
+
+const today = new Date();
+const start = new Date(2026, 0, 1);
+const diffTime = today - start;
+const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+const messageIndex = diffDays % messages.length;
+
+const messageEl = document.getElementById("daily-message");
+messageEl.innerText = messages[messageIndex];
+
+// trigger animation
+setTimeout(() => {
+  messageEl.classList.add("show");
+}, 100);
+</script>
+
+</body>
+</html>
