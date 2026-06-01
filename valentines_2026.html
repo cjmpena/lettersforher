@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Letter For You</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+        }
+
+        .envelope-closed {
+            background: #ffffff;
+            padding: 80px 60px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .envelope-closed.hidden {
+            display: none;
+        }
+
+        .envelope-closed h2 {
+            font-size: 1.5em;
+            font-weight: normal;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .open-button {
+            padding: 15px 40px;
+            background: #333;
+            color: white;
+            border: none;
+            font-size: 1em;
+            font-family: 'Georgia', serif;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .open-button:hover {
+            background: #555;
+        }
+
+        .letter-container {
+            background: #ffffff;
+            padding: 60px;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0e0e0;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .letter-container.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .letter-container.hidden {
+            display: none;
+        }
+
+        .letter-header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .letter-header h1 {
+            font-size: 1.8em;
+            font-weight: normal;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .letter-date {
+            color: #999;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .letter-body {
+            color: #444;
+            font-size: 1.05em;
+        }
+
+        .letter-body p {
+            margin-bottom: 24px;
+        }
+
+        .signature {
+            margin-top: 50px;
+            text-align: right;
+            color: #666;
+            font-style: italic;
+        }
+
+        .letter-tab {
+            position: relative;
+            margin: -60px -60px 40px -60px;
+            padding: 15px 0;
+            text-align: center;
+            border-bottom: 1px solid #e0e0e0;
+            background: #c2c2c2;
+        }
+
+        .letter-tab a {
+            text-decoration: none;
+            color: #555;
+            font-size: 0.95em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        .letter-tab a:hover {
+            color: #000;
+        }
+
+        @media (max-width: 600px) {
+            .envelope-closed {
+                padding: 60px 40px;
+            }
+
+            .letter-container {
+                padding: 40px 30px;
+            }
+            
+            .letter-header h1 {
+                font-size: 1.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="letter-body"> 
+        <p>Happy Valentine's day Jo,</p>
+
+        <p>I'm so happy I get to spend this special weekend with you and selfishly have you all to myself.</p>
+                
+        <p>These past five months have been some of the happiest months of my life, and it’s all because I get to love someone as incredible as you every single day. You make my days lighter, my laughs louder, and my heart feels so fucking full.</p>
+
+        <p>You are my favourite person. Please dont forget that I love you more than anything in my life.</p>
+
+        <p>I know you said you wanted a letter so here's a nerdy little version for you.</p>
+                
+        <p>I hope you like the little QR code slip! I created this little website for you 2 months ago, I will continue to code it and make it fancy and special for you. I'm sure you see the little tab at the top called "CJ's Daily Dose of Love for Jo" click it and it will take you to a seperate page where theres a special message. The messages switch and change daily so its a little surprise each day. If I am somehow a little occupied with work or if I take too long to message you back, know you always have this little thing I made for you.</p>
+                
+        <p>Here’s to many, many more Valentine’s dates, more memories, more laughs, and a whole lot more love.</p>
+    </div>
+</body>
+</html>
