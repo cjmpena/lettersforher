@@ -159,10 +159,11 @@
             <h2>You have a message</h2>
             <button class="open-button" onclick="openLetter()">Click here to read</button>
         </div>
-
         <div class="letter-container hidden" id="letterContainer">
             <div class="letter-tab">
                 <a href="daily_dose.html">CJ's Daily Dose of Love for Jo</a>
+            </div>
+            <div class="letter-tab">
                 <a href="valentines_2026.html">Valentines letter 2026</a>
             </div>
             <div class="letter-header">
@@ -181,7 +182,6 @@
                 <p>Please never forget how deeply loved and appreciated you are. No matter what life brings, I'll always be here for you, cheering you on, supporting you, and loving you every step of the way.</p>
 
                 <p>Here's to many more birthday celebrations! Next time let's make sure to plan something extra special for you. Maybe leave the city and travel!</p>
-
             </div>
             <!-- <div class="letter-body"> 
                 <p>Happy Valentine's day Jo,</p>
@@ -198,7 +198,6 @@
                 
                 <p>Here’s to many, many more Valentine’s dates, more memories, more laughs, and a whole lot more love.</p>
             </div> -->
-            
             <div class="signature">
                 Love,<br>
                 CJ
@@ -206,10 +205,6 @@
         </div>
     </div>
     <script>
-        const dateOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById('currentDate').textContent = 
-            new Date().toLocaleDateString('en-US', dateOptions);
-
         function openLetter() {
             const envelopeClosed = document.getElementById('envelopeClosed');
             const letterContainer = document.getElementById('letterContainer');
